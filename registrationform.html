@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .image-section {
+      width: 50%;
+      background-image: url('https://static.vecteezy.com/system/resources/previews/003/226/310/original/halloween-dark-night-scenery-background-concept-free-vector.jpg'); /* Replace with your image */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .registration-section {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #06011f;
+      
+      padding: 0 20px;
+    }
+
+    .registration-box {
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+      background: rgb(243, 242, 245);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #0073b1; /* IEEE blue */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005f8d;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .footer img {
+      width: 100px;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="image-section"> 
+        <img src="https://static.vecteezy.com/system/resources/previews/003/226/310/original/halloween-dark-night-scenery-background-concept-free-vector.jpg" 
+        height = "735px" width="1100px">
+    </div>
+
+    <div class="registration-section">
+      <div class="registration-box">
+        <h2>Register</h2>
+
+        <form id="registrationForm">
+          <input type="text" id="name" placeholder="Full Name" required>
+          <input type="email" id="email" placeholder="Email" required>
+          <input type="password" id="password" placeholder="Password" required>
+          <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+          <button type="submit" href="../devil.webp">Register</button>
+
+          <div id="errorMessage" class="error-message"></div>
+        </form>
+
+        <div class="footer">
+          <img src="https://www.connectedautomateddriving.eu/wp-content/uploads/2021/11/IEEE-ComSoc-banner.png" alt="IEEE Logo">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Clear previous error messages
+      const errorMessage = document.getElementById('errorMessage');
+      errorMessage.textContent = '';
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        errorMessage.textContent = 'Please enter a valid email address.';
+        return false;
+      }
+
+      // Password validation (at least 8 characters, contains letters and numbers)
+      const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+      if (!passwordRegex.test(password)) {
+        errorMessage.textContent = 'Password must be at least 8 characters long and contain letters and numbers.';
+        return false;
+      }
+
+      // Confirm password validation
+      if (password !== confirmPassword) {
+        errorMessage.textContent = 'Passwords do not match.';
+        return false;
+      }
+
+      // Perform further actions here (like form submission)
+      alert('Registration successful');
+    });
+  </script>
+
+</body>
+</html>

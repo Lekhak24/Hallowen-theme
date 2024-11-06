@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halloween Theme Homepage</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #f6c7d4;
+            font-size: 18px;
+            padding: 10px 15px;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #ff6f61;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 150px 20px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 4em;
+            margin: 0;
+            color: #ff6f61;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            background: #0d0d6e;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #90d3df;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            text-align:center;
+        
+        }
+
+        footer a {
+            color: #f6c7d4;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+        footer a:hover {
+            color: #ff6f61;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Video -->
+    <video class="video-background" autoplay muted loop>
+        <source src="vecteezy_animation-of-spooky-jack-o-lantern-halloween-pumpkins-with_1804936.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Header and Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <img src="logo_dsu-removebg-preview.png" height="60px" width="295px">
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="./Web Wizard/countdown.html">Events</a>
+            
+            <a href="#">Gallery</a>
+            <a href="#">Blog</a>
+            <a href="./Web Wizard/loginpage.html" class="cta-button">Login</a>
+            <a href="./Web Wizard/registrationform.html" class="cta-button">Register </a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Welcome to Spooky Halloween!</h1>
+        <p>Join us for a frightfully good time.</p>
+        <a href="#" class="cta-button">Discover More</a>
+    </div>
+
+   
+</body>
+</html>
+

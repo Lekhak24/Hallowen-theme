@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Halloween Countdown</title>
+    <link rel="stylesheet" href="countdown.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Halloween Countdown</h1>
+    <div class="countdown" id="countdown"></div>
+  </div>
+
+  <script>
+    const countdownElement = document.getElementById('countdown');
+    const halloweenDate = new Date('October 31, 2024 00:00:00');
+    let now = new Date();
+
+    function countdown() {
+      now = new Date();
+      const timeLeft = halloweenDate - now;
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      countdownElement.innerHTML = `Days: ${days}, Hours: ${hours}, Minutes: ${minutes}, Seconds: ${seconds}`;
+    }
+
+    setInterval(countdown, 1000);
+  </script>
+</body>
+</html>
